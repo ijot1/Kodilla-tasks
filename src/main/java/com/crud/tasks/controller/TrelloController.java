@@ -25,7 +25,7 @@ public class TrelloController {
         trelloBoards.stream()
                 .filter(t->t.getId() != null)
                 .filter(t->t.getName() != null)
-                .filter(t->t.getName().contains("Kodilla"))
+                .filter(t->t.getName().toUpperCase().contains("KODILLA"))
                 .forEach(System.out::print);
     }
 }
