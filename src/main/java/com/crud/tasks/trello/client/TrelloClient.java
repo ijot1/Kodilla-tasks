@@ -15,13 +15,13 @@ import java.util.List;
 @Component
 public class TrelloClient {
 
-    @Value("${trello.api.endpoint.prod}")
+    @Value("https://api.trello.com/1")
     private String trelloApiEndpoint;
-    @Value("${trello.api.username}")
+    @Value("ireneuszjaneczek128")
     private String username;
-    @Value("${trello.app.key}")
+    @Value("faa7c889a877670ffaaa7202ca60e7ef")
     private String trelloAppKey;
-    @Value("${trello.app.token}")
+    @Value("9bf2a0181bb77584d268ecffcb94e2a99404bd26661d26e174065d6121c2fef6")
     private String trelloToken;
     @Autowired
     private RestTemplate restTemplate;
