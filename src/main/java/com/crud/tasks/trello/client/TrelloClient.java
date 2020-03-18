@@ -16,14 +16,19 @@ import java.util.Optional;
 @Component
 public class TrelloClient {
 
-    @Value("${trello.api.endpoint.prod}")
+    /*@Value("${trello.api.endpoint.prod}")
     private String trelloApiEndpoint;
     @Value("${trello.api.username}")
     private String username;
     @Value("${trello.app.key}")
     private String trelloAppKey;
     @Value("${trello.app.token}")
-    private String trelloToken;
+    private String trelloToken;*/
+
+    private final String trelloApiEndpoint = "https://api.trello.com/1";
+    private final String username = "ireneuszjaneczek128";
+    private final String trelloAppKey = "faa7c889a877670ffaaa7202ca60e7ef";
+    private final String trelloToken = "9bf2a0181bb77584d268ecffcb94e2a99404bd26661d26e174065d6121c2fef6";
     @Autowired
     private RestTemplate restTemplate;
 
