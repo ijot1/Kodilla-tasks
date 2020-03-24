@@ -71,11 +71,11 @@ public class TrelloClientTest {
 
         //Given
         when(trelloConfig.getTrelloApiEndpoint()).thenReturn("http://test.com");
-        when(trelloConfig.getTrelloAppKey()).thenReturn("");
-        when(trelloConfig.getTrelloToken()).thenReturn("");
+        when(trelloConfig.getTrelloAppKey()).thenReturn("test2");
+        when(trelloConfig.getTrelloToken()).thenReturn("test2");
 
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
-        trelloBoards[0] = new TrelloBoardDto("1", "Any name", new ArrayList<>());
+        trelloBoards[0] = new TrelloBoardDto("", "Any name", new ArrayList<>());
 
         URI uri = new URI("http://test.com/members/ireneuszjaneczek128/boards?key=test&token=test&fields=name,id&lists=all");
 
