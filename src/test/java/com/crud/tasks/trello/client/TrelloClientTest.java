@@ -45,7 +45,7 @@ public class TrelloClientTest {
         //Given
         when(trelloConfig.getTrelloApiEndpoint()).thenReturn("http://test.com");
         when(trelloConfig.getTrelloAppKey()).thenReturn("test");
-        when(trelloConfig.getTrelloToken()).thenReturn("test");
+                when(trelloConfig.getTrelloToken()).thenReturn("test");
 
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
         trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());
@@ -71,11 +71,11 @@ public class TrelloClientTest {
 
         //Given
         when(trelloConfig.getTrelloApiEndpoint()).thenReturn("http://test.com");
-        when(trelloConfig.getTrelloAppKey()).thenReturn("test2");
-        when(trelloConfig.getTrelloToken()).thenReturn("test2");
+        when(trelloConfig.getTrelloAppKey()).thenReturn("");
+        when(trelloConfig.getTrelloToken()).thenReturn("");
 
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
-        trelloBoards[0] = new TrelloBoardDto("", "Any name", new ArrayList<>());
+        trelloBoards[0] = new TrelloBoardDto("test_id", "test_board", new ArrayList<>());
 
         URI uri = new URI("http://test.com/members/ireneuszjaneczek128/boards?key=test&token=test&fields=name,id&lists=all");
 
