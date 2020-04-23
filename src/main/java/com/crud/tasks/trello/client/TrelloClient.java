@@ -22,7 +22,6 @@ import java.util.Optional;
 public class TrelloClient {
 
 
-
     private final String username = "ireneuszjaneczek128";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(TrelloClient.class);
