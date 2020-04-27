@@ -26,7 +26,7 @@ public class SimpleEmailService {
         } catch (MailException e) {
             LOGGER.error("Failed to process email sending: ", e.getMessage(), e);
         }
-        if (!mail.getToCc().equals("")) {
+        if (mail.getToCc() != null && !mail.getToCc().equals("")) {
             LOGGER.info("Starting cc email preparation...");
             try {
                 SimpleMailMessage mailMessage = createCcMailMessage(mail);
