@@ -10,4 +10,8 @@ public class Mail {
     private String toCc;
     private String subject;
     private String message;
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }
