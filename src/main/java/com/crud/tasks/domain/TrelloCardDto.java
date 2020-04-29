@@ -14,8 +14,6 @@ public class TrelloCardDto {
 
     private String description;
 
-    private String pos;
-
     private String listId;
 
     @Override
@@ -23,7 +21,6 @@ public class TrelloCardDto {
         return "TrelloCardDto{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", pos='" + pos + '\'' +
                 ", listId='" + listId + '\'' +
                 '}';
     }
