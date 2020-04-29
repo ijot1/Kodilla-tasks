@@ -30,11 +30,7 @@ public class EmailScheduler {
                 null,
                 SUBJECT,
                 "");
-        if (size !=1) {
-            mail.setMessage("Currently you got: " + size + " tasks in database");
-        } else {
-            mail.setMessage("Currently you got: " + size + " task in database");
-        }
+        mail.setMessage("Currently you got: " + size + (size != 1 ? " tasks in database" : " task in database"));
         simpleEmailService.send(mail);
     }
 }
