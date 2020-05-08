@@ -3,13 +3,10 @@ package com.crud.tasks.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
-public class TrelloCardDto {
-
+public class TrelloCard {
     private String name;
     private String description;
     private String pos;
@@ -17,9 +14,10 @@ public class TrelloCardDto {
 
     @Override
     public String toString() {
-        return "TrelloCardDto{" +
+        return "TrelloCard{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", pos='" + pos + '\'' +
                 ", listId='" + listId + '\'' +
                 '}';
     }
