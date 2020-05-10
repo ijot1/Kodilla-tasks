@@ -88,7 +88,7 @@ public class TrelloMapperTest {
     public void shouldMapToCard() {
         //Given
         TrelloCardDto trelloCardDto = new TrelloCardDto("card_#1", "desc_#1",
-                "pos_#1", "listId = 1");
+                 "top", "listId = 1");
         //When
         String str = trelloMapper.mapToCard(trelloCardDto).getName();
         System.out.println(str);
@@ -100,7 +100,7 @@ public class TrelloMapperTest {
     public void shouldMapToCardDto() {
         //Given
         TrelloCard trelloCard = new TrelloCard("card_#1", "desc_#1",
-                "pos_#1", "listId = 1");
+                 "top", "listId = 1");
         //When
         String str = trelloMapper.mapToCardDto(trelloCard).getName();
         System.out.println(str);

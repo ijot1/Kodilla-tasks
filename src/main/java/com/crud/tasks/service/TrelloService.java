@@ -21,13 +21,13 @@ public class TrelloService {
     private static final String SUBJECT = "Tasks: New Trello card";
 
     @Autowired
-    AdminConfig adminConfig;
+    private AdminConfig adminConfig;
 
     @Autowired
     private TrelloClient trelloClient;
 
     @Autowired
-    SimpleEmailService emailService;
+    private SimpleEmailService emailService;
 
     public List<TrelloBoardDto> fetchTreloBoards() {
         return trelloClient.getTrelloBoards();

@@ -18,4 +18,13 @@ public class CreatedTrelloCardDto {
 
     @JsonProperty("shortUrl")
     private String shortUrl;
+
+    @Override
+    public String toString() {
+        return "CreatedTrelloCardDto{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", shortUrl='" + shortUrl + '\'' +
+                '}';
+    }
 }
