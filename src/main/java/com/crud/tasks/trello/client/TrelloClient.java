@@ -40,6 +40,7 @@ public class TrelloClient {
                 .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("fields", "name,id")
                 .queryParam("lists", "all").build().encode().toUri();
+        System.out.println("url: " + url);
 
         try {
             TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
@@ -59,7 +60,7 @@ public class TrelloClient {
                 .queryParam("name", trelloCardDto.getName())
                 .queryParam("desc", trelloCardDto.getDescription())
                 .queryParam("idList", trelloCardDto.getListId()).build().encode().toUri();
-        System.out.println("TrelloClient: " + url);
+        System.out.println("createNewCard(): " + url);
         return restTemplate.postForObject(url, null, CreatedTrelloCardDto.class);
     }
 }
