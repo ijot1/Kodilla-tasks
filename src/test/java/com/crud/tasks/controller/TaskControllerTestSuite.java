@@ -47,7 +47,7 @@ public class TaskControllerTestSuite {
         when(taskMapper.mapToTaskDtoList(anyList())).thenReturn(taskList);
 
         //When & Then
-        mockMvc.perform(get("/v1/task/getTasks").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/v1/tasks").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200))
                 .andExpect(jsonPath("$[0].id", is(1)))
                 .andExpect(jsonPath("$[0].title", is("test_title")))
@@ -64,7 +64,7 @@ public class TaskControllerTestSuite {
         when(taskMapper.mapToTaskDto(task)).thenReturn(taskDto);
 
         //When & Then
-        mockMvc.perform(get("/v1/task/getTask?taskId=1").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/v1/tasks/{taskId}","1").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200))
                 .andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.title", is("test_title")))
@@ -84,7 +84,7 @@ public class TaskControllerTestSuite {
         String jsonContent = gson.toJson(taskDto);
 
         //When & Then
-        mockMvc.perform(post("/v1/task/createTask")
+        mockMvc.perform(post("/v1/tasks")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
@@ -104,7 +104,7 @@ public class TaskControllerTestSuite {
         String jsonContent = gson.toJson(task);
 
         //When & Then
-        mockMvc.perform(put("/v1/task/updateTask")
+        mockMvc.perform(put("/v1/tasks")
                 .contentType(MediaType.APPLICATION_JSON)
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
@@ -117,7 +117,7 @@ public class TaskControllerTestSuite {
     @Test
     public void deleteTaskTest() throws Exception {
 
-        mockMvc.perform(delete("/v1/task/deleteTask?taskId=1", "1").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(delete("/v1/tasks/{taskId}", "1").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is(200));
         verify(service, times(1)).deleteTask(anyLong());
     }
