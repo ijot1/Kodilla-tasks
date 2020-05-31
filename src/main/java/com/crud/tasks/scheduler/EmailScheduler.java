@@ -21,8 +21,9 @@ public class EmailScheduler {
     @Autowired
     private AdminConfig adminConfig;
 
-//    @Scheduled(cron = "0 0 10 * * *") //everyday at 10 o'clock
-    @Scheduled(fixedDelay = 300000) //300000 = 5 min.
+    @Scheduled(cron = "0 0 10 * * *") //everyday at 10 o'clock
+    /*<second> <minute> <hour> <day-of-month> <month> <day-of-week> <year>; <year> field is optional*/
+//    @Scheduled(fixedDelay = 300000) //300000 = 5 min.
     public void sendInformationEmail() {
         long size = taskRepository.count();
         Mail mail = new Mail(
